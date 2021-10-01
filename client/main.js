@@ -58,40 +58,51 @@ function createAnimalCard(res){
   console.log('hit',animalContainer)
 };
 
-function low () {
-  alert('lower than dirt')
-  // const myMessage = document.createElement('h2');
-  // myMessage.textContent = "lower than dirt";
-  // myMessage.id = "low";
-  // feelings.appendChild(myMessage)
-  
-}
-function lessLow () {
-  alert('a little above lower than dirt')
-  // const myMessage = document.createElement('h2');
-  // myMessage.textContent = "a little above lower than dirt";
-  // myMessage.id = "lessLow";
-  // feelings.appendChild(myMessage)
+
+
+function clickedValue () {
+  var existingMessage = document.getElementById('myMessage');
+  if (existingMessage) {
+  existingMessage.remove();}
+
+  const myMessage = document.createElement('h2');
+  myMessage.id = "myMessage";
+
+
+
+
+
+  if(event.target.id === "one"){
+    myMessage.textContent = "lower than dirt";
+    feelings.appendChild(myMessage)
+  } 
+  else if (event.target.id === "two"){
+    myMessage.textContent = "a little above lower than dirt";
+    feelings.appendChild(myMessage)
+  } 
+  else if (event.target.id === "three"){
+    myMessage.textContent = "consider me a pb and j";
+    feelings.appendChild(myMessage)
+  } 
+  else if (event.target.id === "four") {
+    myMessage.textContent = "I could eat two pringle chips right now";
+    feelings.appendChild(myMessage)
+  } 
+  else if (event.target.id === "five"){
+    myMessage.textContent = "I am inevitable";
+    feelings.appendChild(myMessage)
+  }
 }
 
-function mid () {
-  alert('consider me a pb and j')
-}
-function moreHigh () {
-  alert('I could eat two pringle chips right now')
-}
-function high () {
-  alert('I am inevitable')
-}
 
 
 animalButton.addEventListener('click', getSpiritAnimal);
 complimentButton.addEventListener('click', getCompliment);
 fortuneButton.addEventListener('click', getFortune);
 
-one.addEventListener('click', low)
-two.addEventListener('click', lessLow)
-three.addEventListener('click', mid)
-four.addEventListener('click', moreHigh)
-five.addEventListener('click', high)
+one.addEventListener('click', clickedValue)
+two.addEventListener('click', clickedValue)
+three.addEventListener('click', clickedValue)
+four.addEventListener('click', clickedValue)
+five.addEventListener('click', clickedValue)
 
